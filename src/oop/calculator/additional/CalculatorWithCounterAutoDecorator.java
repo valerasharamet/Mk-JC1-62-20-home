@@ -1,48 +1,53 @@
 package oop.calculator.additional;
 
 public class CalculatorWithCounterAutoDecorator implements ICalculator  {
-    ICalculator calculator;
+    private final ICalculator calculator;
+    private long countOperation =0;
 
     public CalculatorWithCounterAutoDecorator (ICalculator calculator) {
         this.calculator = calculator;
     }
 
-    public ICalculator getCalculator() {
-        return calculator;
-    }
-
-    @Override
     public double segmentation(double a, double b) {
-        return calculator.segmentation(a, b);
+        countOperation++;
+        return this.calculator.segmentation(a, b);
     }
 
-    @Override
     public double multiplication(double a, double b) {
-        return calculator.multiplication(a, b);
+        countOperation++;
+        return this.calculator.multiplication(a, b);
     }
 
-    @Override
     public double addition(double a, double b) {
-        return calculator.addition(a, b);
+        countOperation++;
+        return this.calculator.addition(a, b);
     }
 
-    @Override
     public double subtraction(double a, double b) {
-        return calculator.subtraction(a , b);
+        countOperation++;
+        return this.calculator.subtraction(a, b);
     }
 
-    @Override
     public double root(double a, int b) {
-        return calculator.root(a, b);
+        countOperation++;
+        return this.calculator.root(a, b);
     }
 
-    @Override
     public double modulus(double a) {
-        return calculator.modulus(a);
+        countOperation++;
+        return this.calculator.modulus(a);
     }
 
-    @Override
     public double power(double a, int b) {
-        return calculator.power(a, b);
+        countOperation++;
+        return this.calculator.power(a, b);
+    }
+
+    public long getCountOperation() {
+        return countOperation;
+    }
+
+    public ICalculator getCalculator() {
+        return this.calculator;
     }
 }

@@ -3,7 +3,7 @@ package oop.calculator.additional;
 import oop.calculator.simple.CalculatorWithMathExtends;
 
 public class CalculatorWithCounterClassic extends CalculatorWithMathExtends {
-    public long countOperation;
+    private long countOperation;
 
     public CalculatorWithCounterClassic() {
 

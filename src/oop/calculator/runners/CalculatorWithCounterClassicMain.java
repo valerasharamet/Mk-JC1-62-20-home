@@ -16,6 +16,6 @@ public class CalculatorWithCounterClassicMain {
         double result = calculator.addition(b,d);
         calculator.incrementCountOperation();
         System.out.println(result);
-        System.out.println(calculator.getCountOperation());
+
     }
 }

@@ -5,62 +5,89 @@ import oop.calculator.simple.CalculatorWithMathExtends;
 import oop.calculator.simple.CalculatorWithOperator;
 
 public class CalculatorWithCounterAutoComposite {
-    CalculatorWithMathExtends calculatorWithMathExtends;
-    CalculatorWithOperator calculatorWithOperator;
-    CalculatorWithMathCopy calculatorWithMathCopy;
-    public long countOperation;
+    private final CalculatorWithOperator calculatorWithOperator;
+    private final CalculatorWithMathCopy calculatorWithMathCopy;
+    private long countOperation =0;
 
     public CalculatorWithCounterAutoComposite(CalculatorWithOperator calculator) {
         this.calculatorWithOperator = calculator;
+        this.calculatorWithMathCopy = null;
     }
 
     public CalculatorWithCounterAutoComposite(CalculatorWithMathCopy calculator) {
+        this.calculatorWithOperator = null;
         this.calculatorWithMathCopy = calculator;
     }
 
-    public CalculatorWithCounterAutoComposite(CalculatorWithMathExtends calculator) {
-        this.calculatorWithMathExtends = calculator;
-    }
+
+
 
     public double segmentation(double a, double b) {
         countOperation++;
-        return calculatorWithMathExtends.segmentation(a,b);
-
+        if(this.calculatorWithOperator != null){
+            return this.calculatorWithOperator.segmentation(a,b);
+        } else  {
+            return this.calculatorWithMathCopy.segmentation(a, b);
+        }
 
     }
 
     public double multiplication(double a, double b) {
         countOperation++;
-        return calculatorWithMathExtends.multiplication(a,b);
+        if(this.calculatorWithOperator != null){
+            return this.calculatorWithOperator.multiplication(a,b);
+        } else  {
+            return this.calculatorWithMathCopy.multiplication(a, b);
+        }
     }
 
     public double addition(double a, double b) {
         countOperation++;
-        return calculatorWithMathExtends.addition(a,b);
+        if(this.calculatorWithOperator != null){
+            return this.calculatorWithOperator.addition(a,b);
+        } else {
+            return this.calculatorWithMathCopy.addition(a, b);
+        }
 
     }
 
     public double subtraction(double a, double b) {
         countOperation++;
-        return calculatorWithMathExtends.subtraction(a,b);
+        if(this.calculatorWithOperator != null){
+            return this.calculatorWithOperator.subtraction(a,b);
+        } else {
+            return calculatorWithOperator.subtraction(a, b);
+        }
 
     }
 
     public double root(double a, int b) {
         countOperation++;
-        return calculatorWithMathExtends.root(a, b);
+        if(this.calculatorWithOperator != null){
+            return this.calculatorWithOperator.root(a,b);
+        } else {
+            return calculatorWithOperator.root(a, b);
+        }
 
     }
 
     public double modulus(double a) {
         countOperation++;
-        return calculatorWithMathExtends.modulus(a);
+        if(this.calculatorWithOperator != null){
+            return this.calculatorWithOperator.modulus(a);
+        } else {
+            return this.calculatorWithMathCopy.modulus(a);
+        }
 
     }
 
     public double power(double a, int b) {
         countOperation++;
-        return calculatorWithMathExtends.power(a, b);
+        if(this.calculatorWithOperator != null){
+            return this.calculatorWithOperator.power(a,b);
+        } else {
+            return calculatorWithOperator.power(a, b);
+        }
     }
 
     public long getCountOperation() {
