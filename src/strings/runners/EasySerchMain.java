@@ -8,6 +8,6 @@ public class EasySerchMain {
         String content = "";
         content = new GetText().getString(content);
         EasySearchEngine easySearchEngine = new EasySearchEngine();
-        easySearchEngine.search(content, "Война");
+        easySearchEngine.search(content, "");
     }
 }
