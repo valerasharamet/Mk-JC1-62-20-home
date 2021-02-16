@@ -10,14 +10,15 @@ public class CalculatorDecoratorMain {
         double b = calculator.addition(4.1,a);
         calculator.saveMemory();
         double c = calculator.segmentation(28,5);
+        System.out.print("Текущее число в памяти:  ");
+        calculator.showMemory();
+        System.out.print("Число обнулилось:  ");
         calculator.showMemory();
         double d = calculator.power(c,2);
         double result = calculator.addition(b,d);
         calculator.saveMemory();
         System.out.println(result);
-        calculator.showMemory();
-        calculator.saveMemory();
-        System.out.println(calculator.getCountOperation());
+        System.out.println("Число операций:  " + calculator.getCountOperation());
 
 
 

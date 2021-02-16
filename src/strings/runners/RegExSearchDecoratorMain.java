@@ -1,6 +1,5 @@
 package strings.runners;
 
-import strings.additional.EasySearchEngine;
 import strings.additional.RegExSearch;
 import strings.additional.RegExSearchDecorator;
 import strings.util.GetText;
