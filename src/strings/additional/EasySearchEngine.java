@@ -5,6 +5,10 @@ public class EasySearchEngine implements ISearchEngine {
     private int index = 1;
     private int index2 = 0;
 
+    public EasySearchEngine () {
+
+    }
+
 
     @Override
     public long search(String text, String word) {
@@ -30,7 +34,7 @@ public class EasySearchEngine implements ISearchEngine {
             }
 
         }
-        System.out.println(count);
+        System.out.println("Количестово повторений слова: " + word + "  " + count  );
         return count;
     }
 }

@@ -1,13 +1,14 @@
 package strings.runners;
 
 import strings.additional.EasySearchEngine;
+import strings.additional.RegExSearch;
 import strings.util.GetText;
 
-public class EasySerchMain {
+public class RegExSearchMain {
     public static void main(String[] args) {
-        String content = "";
+        String content = null;
         content = new GetText().getString(content);
-        EasySearchEngine easySearchEngine = new EasySearchEngine();
-        easySearchEngine.search(content, "он");
+        RegExSearch regExSearch = new RegExSearch();
+        regExSearch.search(content,"война");
     }
 }

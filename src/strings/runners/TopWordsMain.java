@@ -12,6 +12,6 @@ public class TopWordsMain {
         TopWords topWords = new TopWords();
         content = new GetText().getString(content);
         Map<String,Integer> words = topWords.getMap(content);
-        topWords.getTopWord(2);
+        topWords.getTopWord(50);
     }
 }

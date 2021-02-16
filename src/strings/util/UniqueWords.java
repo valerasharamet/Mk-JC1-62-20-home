@@ -8,7 +8,6 @@ public class UniqueWords {
 
     public HashSet<String> getUniqueWords(HashSet<String> uniqueWords, String content) {
         Pattern p = Pattern.compile("[^а-яА-Я\\s]|\n");
-        // получение matcher объекта
         Matcher m = p.matcher(content);
         content = m.replaceAll("");
         String[] str = content.split(" +");
